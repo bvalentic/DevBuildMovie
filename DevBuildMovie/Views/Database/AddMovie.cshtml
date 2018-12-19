@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "AddMovie";
+}
+
+<h2>Add New Movie</h2>
+
+<form action="~/Database/SaveNewMovie" method="post">
+    <input type="hidden" name="MovieID" />
+    <input type="text" name="MovieTitle" placeholder="Movie Title" required />
+    <input type="text" name="Genre" placeholder="Genre" required />
+    <input type="text" name="Year" placeholder="Year" required />
+
+    <input type="radio" name="Watched" value="Yes" required />
+    <label for="Yes">Watched</label>
+    <input type="radio" name="Watched" value="No" />
+    <label for="No">Not Watched</label>
+
+    <input type="submit" class="btn-info" />
+</form>
+

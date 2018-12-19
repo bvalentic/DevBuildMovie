@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "EditMovie";
+}
+
+<h2>EditMovie</h2>
+
+@model DevBuildMovie.Models.Movie
+
+<form action="~/Database/SaveMovieChanges" method="post">
+    <input type="hidden" name="MovieID" value="@Model.MovieID" />
+    <input type="text" name="MovieTitle" value="@Model.MovieTitle" placeholder="@Model.MovieTitle"/>
+    <input type="text" name="Genre" value="@Model.Genre" />
+    <input type="text" name="Year" value="@Model.Year" />
+    <input type="text" name="Watched" value="@Model.Watched" />
+    <input type="submit" class="btn-default" />
+
+
+</form>
+

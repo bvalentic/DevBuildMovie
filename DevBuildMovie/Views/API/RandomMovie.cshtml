@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "RandomMovie";
+}
+
+<h2>Random Movie</h2>
+
+<h4>Your random pick is @ViewBag.RandomPick["MovieTitle"]</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            Movie Title
+        </th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Watched
+        </th>
+        <th>
+            Director
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @ViewBag.RandomPick["MovieTitle"]
+        </td>
+        <td>
+            @ViewBag.RandomPick["Genre"]
+        </td>
+        <td>
+            @ViewBag.RandomPick["Year"]
+        </td>
+        <td>
+            @ViewBag.RandomPick["Watched"]
+        </td>
+        @if (ViewBag.RandomPick["Director"] != null)
+        {
+            <td> @ViewBag.RandomPick["Director"]["FirstName"] @ViewBag.RandomPick["Director"]["LastName"] </td>
+        }       
+    </tr>
+</table>

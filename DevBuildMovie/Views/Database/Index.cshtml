@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movie Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Movie Title
+        </th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Watched
+        </th>
+        <th>
+            Director
+        </th>
+    </tr>
+    @foreach (var movie in ViewBag.MovieList)
+    {
+    <tr>
+        <td>@movie.MovieTitle</td>
+        <td>@movie.Genre</td>
+        <td>@movie.Year</td>
+        <td>@movie.Watched</td>
+        @if (movie.Director != null)
+        {
+            <td>@movie.Director.FirstName @movie.Director.LastName</td>
+        }
+        <td><a href="~/Database/EditMovie?MovieID=@movie.MovieID" class="btn-primary">Edit this movie</a></td>
+        <td><a href="~/Database/DeleteMovie?MovieID=@movie.MovieID" class="btn-primary">Delete this movie</a></td>
+    </tr>
+    }
+
+</table>
+
+<a href="~/Database/AddMovie/" class="btn-group">Add a new movie to the database</a>
+

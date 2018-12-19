@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "List Movies By Genre";
+}
+
+<h2>Movies in the @ViewBag.Genre genre:</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Movie Title
+        </th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Watched
+        </th>
+        <th>
+            Director
+        </th>
+    </tr>
+
+    @foreach (var movie in ViewBag.MoviesByGenre)
+    {
+        <tr>
+            <td>@movie.MovieTitle</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Year</td>
+            <td>@movie.Watched</td>
+            @if (movie.Director != null)
+            {
+                <td>@movie.Director.FirstName @movie.Director.LastName</td>
+            }
+        </tr>
+    }
+
+</table>
